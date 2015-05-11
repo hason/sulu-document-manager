@@ -42,7 +42,7 @@ abstract class AbstractFilingSubscriber implements EventSubscriberInterface
         $document = $event->getDocument();
 
         if (!$this->supports($document)) {
-            return;
+            return false;
         }
 
         $parentName = $this->getParentName($document);

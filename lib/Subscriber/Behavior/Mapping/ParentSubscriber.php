@@ -72,7 +72,7 @@ class ParentSubscriber implements EventSubscriberInterface
         $document = $event->getDocument();
 
         if (!$document instanceof ParentBehavior) {
-            return;
+            return false;
         }
 
         if ($event->hasParentNode()) {

@@ -45,7 +45,7 @@ class LocaleSubscriber implements EventSubscriberInterface
         $document = $event->getDocument();
 
         if (!$document instanceof LocaleBehavior) {
-            return;
+            return false;
         }
 
         $event->getAccessor()->set(

@@ -68,7 +68,7 @@ class BlameSubscriber implements EventSubscriberInterface
         $document = $event->getDocument();
 
         if (!$document instanceof BlameBehavior) {
-            return;
+            return false;
         }
 
         $userId = $this->getUserId($event->getOptions());

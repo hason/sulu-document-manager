@@ -50,7 +50,7 @@ class PathSubscriber implements EventSubscriberInterface
         $document = $event->getDocument();
 
         if (!$document instanceof PathBehavior) {
-            return;
+            return false;
         }
 
         $event->getAccessor()->set(

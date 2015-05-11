@@ -55,9 +55,9 @@ class BenchmarkBench extends BaseBench
     public function benchCreatePersistPhpcr(BenchIteration $iteration)
     {
         $session = $this->getSession();
-        $baseNode = $session->getNode(self::BASE_PATH);
 
         for ($i = 0; $i < $iteration->getParameter('nb_nodes'); $i++) {
+            $baseNode = $session->getNode(self::BASE_PATH);
             $node = $baseNode->addNode('node-' . $i);
             foreach ($iteration->getParameter('locales') as $locale) {
                 $node->addMixin('mix:test');
@@ -78,9 +78,9 @@ class BenchmarkBench extends BaseBench
             array(
                 'nb_nodes' => 10, 
             ),
-            array(
-                'nb_nodes' => 100, 
-            ),
+            //array(
+                //'nb_nodes' => 100, 
+            //),
         );
     }
 

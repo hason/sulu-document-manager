@@ -39,8 +39,8 @@ class Bootstrap
         $logger = new Logger('test');
         $logger->pushHandler(new StreamHandler($logDir .'/test.log'));
 
-        //$dispatcher = new DebugEventDispatcher($container, $stopwatch, $logger);
-        $dispatcher = new ContainerAwareEventDispatcher($container);
+        $dispatcher = new DebugEventDispatcher($container, $stopwatch, $logger);
+        //$dispatcher = new ContainerAwareEventDispatcher($container);
         $container->set('sulu_document_manager.event_dispatcher', $dispatcher);
 
         $config = array(
@@ -128,6 +128,7 @@ class Bootstrap
             $nodeTypeManager->registerNodeTypesCnd(<<<EOT
 [mix:test] > mix:referenceable mix
 EOT
+
             , true);
         }
 

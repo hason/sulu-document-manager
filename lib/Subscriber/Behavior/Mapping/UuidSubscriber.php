@@ -37,7 +37,7 @@ class UuidSubscriber implements EventSubscriberInterface
         $document = $event->getDocument();
 
         if (!$document instanceof UuidBehavior) {
-            return;
+            return false;
         }
 
         $node = $event->getNode();

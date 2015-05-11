@@ -50,7 +50,7 @@ class ChildrenSubscriber implements EventSubscriberInterface
         $document = $event->getDocument();
 
         if (!$document instanceof ChildrenBehavior) {
-            return;
+            return false;
         }
 
         $accessor = $event->getAccessor();

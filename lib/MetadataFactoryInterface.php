@@ -72,4 +72,11 @@ interface MetadataFactoryInterface
      * @return array
      */
     public function getAliases();
+
+    /**
+     * Return all registered classes
+     *
+     * @return array
+     */
+    public function getClasses();
 }

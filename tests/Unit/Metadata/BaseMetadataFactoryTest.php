@@ -120,4 +120,16 @@ class BaseMetadataFactoryTest extends \PHPUnit_Framework_TestCase
         $this->assertTrue($this->factory->hasAlias('page'));
         $this->assertFalse($this->factory->hasAlias('fooabarbardg'));
     }
+
+    /**
+     * It should return a list of all registered classes
+     */
+    public function testGetClasses()
+    {
+        $classes = $this->factory->getClasses();
+        $this->assertEquals(array(
+            'Class\\Page',
+            'Class\\Snippet',
+        ), $classes);
+    }
 }

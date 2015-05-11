@@ -141,6 +141,14 @@ class BaseMetadataFactory implements MetadataFactoryInterface
     }
 
     /**
+     * {@inheritDoc}
+     */
+    public function getClasses() 
+    {
+        return array_keys($this->classMap);
+    }
+
+    /**
      * @param array $mapping
      *
      * @return Metadata

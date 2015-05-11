@@ -53,7 +53,7 @@ class TimestampSubscriber implements EventSubscriberInterface
         $document = $event->getDocument();
 
         if (!$document instanceof TimestampBehavior) {
-            return;
+            return false;
         }
 
         $node = $event->getNode();

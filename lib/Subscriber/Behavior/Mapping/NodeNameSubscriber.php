@@ -41,7 +41,7 @@ class NodeNameSubscriber implements EventSubscriberInterface
         $document = $event->getDocument();
 
         if (!$document instanceof NodeNameBehavior) {
-            return;
+            return false;
         }
 
         $node = $event->getNode();

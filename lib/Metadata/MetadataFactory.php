@@ -90,6 +90,14 @@ class MetadataFactory implements MetadataFactoryInterface
     /**
      * {@inheritDoc}
      */
+    public function getClasses()
+    {
+        return $this->metadataFactory->getClasses();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
     public function getMetadataForPhpcrNode(NodeInterface $node)
     {
         $metadata = $this->strategy->resolveMetadataForNode($node);

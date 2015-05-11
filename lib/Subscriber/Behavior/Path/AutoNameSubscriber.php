@@ -80,7 +80,7 @@ class AutoNameSubscriber implements EventSubscriberInterface
         $document = $event->getDocument();
 
         if (!$document instanceof AutoNameBehavior) {
-            return;
+            return false;
         }
 
         $title = $document->getTitle();
